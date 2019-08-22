@@ -14,7 +14,8 @@ import { ActivityListComponent } from './views/content/activity-list/activity-li
 import { ActivityCreateComponent } from './views/content/activity-create/activity-create.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule } from  '@angular/material';
+import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatTableModule } from  '@angular/material';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -39,7 +40,12 @@ import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatBu
     MatSidenavModule,
     MatListModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatTooltipModule
+  ],
+  exports:[
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
