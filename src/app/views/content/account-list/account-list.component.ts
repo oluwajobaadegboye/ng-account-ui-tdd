@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { AccountService } from 'src/app/services/account.service';
 import { Account } from '../../../model/model';
 import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
@@ -9,7 +9,7 @@ import { MatPaginator, MatSort, MatTableDataSource } from '@angular/material';
   templateUrl: './account-list.component.html',
   styleUrls: ['./account-list.component.scss']
 })
-export class AccountListComponent implements OnInit {
+export class AccountListComponent implements OnInit, AfterViewInit {
 
   displayedColumns = ["name", "email", "phone", "website", "action"];
   public dataSource = new MatTableDataSource<Account>();
@@ -55,9 +55,16 @@ export class AccountListComponent implements OnInit {
   ngOnInit() {
 
     this.getAccounts();
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
 
+  }
+
+  ngAfterViewInit(): void {
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
+
+  public doFilter = (value: string) => {
+    this.dataSource.filter = value.trim().toLocaleLowerCase();
   }
 
   getAccounts() {
