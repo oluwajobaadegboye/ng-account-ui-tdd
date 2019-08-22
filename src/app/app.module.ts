@@ -14,10 +14,11 @@ import { ActivityListComponent } from './views/content/activity-list/activity-li
 import { ActivityCreateComponent } from './views/content/activity-create/activity-create.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
-import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatTableModule, MatSortModule, MatInputModule, MatPaginatorModule } from  '@angular/material';
+import { MatToolbarModule, MatIconModule, MatSidenavModule, MatListModule, MatButtonModule, MatTableModule, MatSortModule, MatInputModule, MatPaginatorModule, MatCardModule } from  '@angular/material';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -50,7 +51,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule, 
     MatInputModule,
     FlexLayoutModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatCardModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   exports:[
     MatTableModule,

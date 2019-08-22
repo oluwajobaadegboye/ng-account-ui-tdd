@@ -1,1 +1,10 @@
-<p>account-create works!</p>
+<div class="app-container">
+    <mat-card>
+        <form [formGroup]="accountFormGroup" (ngSubmit)="onCreateAccount()">
+            <mat-form-field>
+                <input matInput placeholder="Name" [formControlName]="'name'" required/>
+                <mat-error *ngIf="accountFormGroup.controls['name'].errors?.required">Name is Required</mat-error>
+            </mat-form-field>
+        </form>
+    </mat-card>
+</div>
